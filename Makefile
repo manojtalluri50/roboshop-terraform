@@ -11,13 +11,13 @@ prod-apply:
 	terraform apply -auto-approve -var-file=env-prod/main.tfvars
 
 
-dev-apply:
+dev-destroy:
 	git pull
 	rm -rf .terraform/terraform.tfstate
 	terraform init -backend-config=./env-dev/state.tfvars
 	terraform destroy -auto-approve -var-file=env-dev/main.tfvars
 
-prod-apply:
+prod-destroy:
 	git pull
 	rm -rf .terraform/terraform.tfstate
 	terraform init -backend-config=./env-prod/state.tfvars
