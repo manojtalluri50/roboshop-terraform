@@ -3,7 +3,7 @@ data "azurerm_resource_group" "main" {
 
 }
 
-data "azurerm_subnet" "example" {
+data "azurerm_subnet" "main" {
   name                 = "Default"
   virtual_network_name = "project-setup-network"
   resource_group_name  = data.azurerm_resource_group.main.name
