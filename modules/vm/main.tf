@@ -85,8 +85,8 @@ resource "azurerm_virtual_machine" "main" {
   }
   os_profile {
     computer_name  = "${var.component}-${var.env}"
-    admin_username = "manoj"
-    admin_password = "Manu@19jn5a0508"
+    admin_username = data.vault_generic_secret.secret_data["admin_username"]
+    admin_password = data.vault_generic_secret.secret_data["admin_password"]
   }
   os_profile_linux_config {
     disable_password_authentication = false
@@ -104,8 +104,8 @@ resource "null_resource" "ansible" {
 
     connection {
       type     = "ssh"
-      user     = "manoj"
-      password = "Manu@19jn5a0508"
+      user     = data.vault_generic_secret.secret_data["admin_username"]
+      password = data.vault_generic_secret.secret_data["admin_password"]
       host     = azurerm_public_ip.main.ip_address
     }
 
