@@ -1,5 +1,4 @@
 env = "dev"
-vault_token = "hvs.TckBOwNWPMaers46QXhIVBGX"
 components={
 
     frontend={
