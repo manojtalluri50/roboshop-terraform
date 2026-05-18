@@ -95,6 +95,11 @@ resource "azurerm_virtual_machine" "main" {
   }
 }
 
+locals {
+  component=var.container ? "${var.component}-docker" : var.component
+
+}
+
 resource "null_resource" "ansible" {
 
   depends_on = [azurerm_virtual_machine.main]
@@ -112,7 +117,7 @@ resource "null_resource" "ansible" {
       "export ANSIBLE_HOST_KEY_CHECKING=False",
       "sudo dnf install -y git python3 python3-pip",
       "sudo pip3 install ansible hvac",
-      "ansible-pull -i localhost, -U https://github.com/manojtalluri50/roboshop-ansible roboshop.yaml -e app_name=${var.component} -e ENV=${var.env} -e vault_token=${var.vault_token}"
+      "ansible-pull -i localhost, -U https://github.com/manojtalluri50/roboshop-ansible roboshop.yaml -e app_name=${local.component} -e ENV=${var.env} -e vault_token=${var.vault_token}"
     ]
   }
 }
