@@ -4,61 +4,61 @@ components={
     frontend={
       name="frontend"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     mongodb={
       name="mongodb"
       vm_size= "Standard_D2s_v3"
-      container=false
+      container="false"
     }
 
     catalogue={
       name="catalogue"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     redis={
       name="redis"
       vm_size= "Standard_D2s_v3"
-      container=false
+      container="false"
     }
 
     user={
       name="user"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     cart={
       name="cart"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     mysql={
       name="mysql"
       vm_size= "Standard_D2s_v3"
-      container=false
+      container="false"
     }
 
     shipping={
       name="shipping"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     rabbitmq={
       name="rabbitmq"
       vm_size= "Standard_D2s_v3"
-      container=false
+      container="false"
     }
 
     payment={
       name="payment"
       vm_size= "Standard_D2s_v3"
-      container=true
+      container="true"
     }
 
     dispatch={
