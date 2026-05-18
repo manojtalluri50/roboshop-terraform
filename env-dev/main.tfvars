@@ -64,6 +64,7 @@ components={
     dispatch={
       name="dispatch"
       vm_size= "Standard_D2s_v3"
+      container="false"
     }
 
 }
